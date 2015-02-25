@@ -1,0 +1,231 @@
+			
+			<!-- Pending List -->
+	     	
+		    <span class="row-fluid left row-header-pending">
+		     	<span class="span6 headline">Pending <span class="red"> (<span id="todoPendingCount"></span>)</span></span>
+		     	<span class="span6 paginate viewMorePending">
+					<span class="span5"></span>
+					<span class="span7">Showing 
+						<span id="todoPendingCount2"></span> |
+						<span class="view-more" id="viewMorePending">View more</span>
+					</span>
+				</span>
+		   	</span>
+	     	
+	        <span id="todoPending"></span>
+	        
+			<!-- Today List -->
+	           
+	        <span class="row-fluid left row-header">
+		     	<span class="span6 headline">Today <span class="red"> (<span id="todoTodayCount"></span>)</span></span>
+		     	<span class="span6 paginate viewMoreToday">
+			     	<span class="span5"></span>
+		     		<span class="span7">Showing <span id="todoTodayCount2"></span> |
+						<span class="view-more" id="viewMoreToday">View more</span>
+					</span>
+				</span>
+		     </span>
+	     	<span id="todoToday"></span>
+							
+			<!-- Tomorrow List -->
+	           
+	        <span class="row-fluid left row-header">
+		     	<span class="span6 headline">Tomorrow <span class="red"> (<span id="todoTomorrowCount"></span>)</span></span>
+		     	<span class="span6 paginate viewMoreTomorrow">
+					<span class="span5"></span>
+					<span class="span7">Showing  <span id="todoTomorrowCount2"></span> |
+						<span class="view-more" id="viewMoreTomorrow">View more</span>
+					</span>
+				</span>
+		    </span>
+	     	<span id="todoTomorrow" ></span>
+	     	
+	        <!-- Week List -->
+	           
+	        <span class="row-fluid left row-header">
+		     	<span class="span6 headline" id="weekHeading"><span class="red"> (<span id="todoWeekCount"></span>)</span></span>
+		     	<span class="span6 paginate viewMoreWeek">
+					<span class="span5"></span>
+					<span class="span7">Showing <span id="todoWeekCount2"></span> |
+						<span class="view-more" id="viewMoreWeek">View more</span>
+					</span>
+				</span>
+		    </span>
+	     	<span class="" id="todoThisWeek"></span>
+		    
+	        <span class="row-fluid"><span class="span2 view-all-btn" id="viewAllTodo">View All</span></span>
+
+
+<div id="addNewTodo" class="modal hide fade in">
+	<div class="modal-header"><a class="close" data-dismiss="modal">×</a>
+		<h3>Add new todo</h3>
+	</div>
+	<div class="modal-body">
+	
+	<form class="form-horizontal" method="post" action="">
+			 <div class="control-group align-center">
+				   <div id="createTodoNewTodo">
+				   		<textarea id="inputTodoNewTodo" rows="3" cols="10" class="input-xlarge" type="text" placeholder="I want to..."></textarea>
+					</div>
+			 </div>
+			  <div class="control-group">
+			    <label class="control-label" for="inputDateNewTodo">Scheduled Date</label>
+				    <div class="controls">
+				     <div id="datetimepickerAddNewTodo" class="input-append">
+					    <input data-format="yyyy-MM-dd HH:mm:ss PP" type="text" id="inputDateNewTodo"></input>
+					    <span class="add-on">
+					      <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+					    </span>
+					  </div>
+				  	</div>
+			  	</div>
+		  	
+			  <div class="control-group">
+			    <label class="control-label" for="inputPriorityNewTodo">Priority</label>
+			    <div class="controls">
+					  <select id="inputPriorityNewTodo">
+					  <option value="0">Low</option>
+					  <option value="1">Medium</option>
+					  <option value="2">High</option>
+					  </select>
+				</div>
+			  </div>
+			  
+			  <div class="control-group">
+			    <label class="control-label" for="inputCategoryNewTodo">Category</label>
+			    <div class="controls">
+			     <input id="inputCategoryNewTodo" type="text" class="" placeholder="Enter category..." autocomplete="off" />
+			    </div>
+			  </div>
+			  
+			  <div class="control-group">
+			    <label class="control-label" for="inputProjectNewTodo">Project</label>
+			    <div class="controls">
+			     <input id="inputProjectNewTodo" type="text" class="" placeholder="Enter project..." autocomplete="off" />
+			    </div>
+			  </div>
+			  
+			  <div class="control-group">
+			    <div class="controls">
+			      	<a class="btn btn-success"  id="addNewTodoSubmit">Add</a> 
+					<a href="#" class="btn" data-dismiss="modal">Cancel</a>
+			    </div>
+			  </div>
+		</form>
+	</div>
+</div>	
+
+<!-- edit  -->
+<div id="editDetails" class="modal hide fade in" style="display: none;">
+	<div class="modal-header"><a class="close" data-dismiss="modal">×</a>
+		<h3>Edit Todo Details</h3>
+	</div>
+	<div class="modal-body">
+		<form class="form-horizontal" method="post" action="">
+		  <div class="control-group">
+		    <label class="control-label" for="editDate">Scheduled Date</label>
+		    <div class="controls">
+		     <div id="datetimepickermodal" class="input-append">
+			    <input data-format="yyyy-MM-dd HH:mm:ss PP" type="text" id="updateDate"></input>
+			    <span class="add-on">
+			      <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+			    </span>
+			  </div>
+		  	</div>
+		  	</div>
+			  <div class="control-group">
+			    <label class="control-label" for="editTask">Todo</label>
+			    <div class="controls">
+			    	<textarea id="editTask" rows="3" cols="10" class="input-xlarge" type="text"></textarea>
+			    </div>
+			  </div>
+			  <div class="control-group">
+			    <label class="control-label" for="editPriority">Priority</label>
+			    <div class="controls">
+					  <select id="editPriority">
+						  <option value="0">Low</option>
+						  <option value="1">Medium</option>
+						  <option value="2">High</option>
+					  </select>
+				</div>
+			  </div>
+			  <div class="control-group">
+			    <label class="control-label" for="editCategory">Category</label>
+			    <div class="controls">
+			     <input id="editCategory" type="text" class="" placeholder="Enter category..." autocomplete="off" />
+			    </div>
+			  </div>
+			  <div class="control-group">
+			    <label class="control-label" for="editProject">Project</label>
+			    <div class="controls">
+			     <input id="editProject" type="text" class="" placeholder="Enter project..." autocomplete="off" />
+			    </div>
+			  </div>
+			  <div class="control-group">
+			   <div class="controls">
+			    <label for="editStatus">
+			     <input type="checkbox" id="editStatus"  >&nbsp;Completed
+               	</label>
+              </div>
+			  </div>
+			  <div class="control-group">
+			    <div class="controls">
+			      	<a class="btn btn-success"  id="submit">Submit</a> 
+					<a href="#" class="btn" data-dismiss="modal">Clear</a>
+			    </div>
+			  </div>
+		</form>
+	</div>
+</div>
+
+<!-- view  -->
+<div id="viewDetails" class="modal hide fade in" style="display: none;">
+	<div class="modal-header align-center"><a class="close" data-dismiss="modal">×</a>
+		<h3>Todo Details</h3>
+	</div>
+	<div class="modal-body">
+		<form class="form-horizontal " >
+		  <div class="control-group">
+		    <label class="control-label" for="viewDate">Scheduled Date  :</label>
+		    <div class="controls">
+		    <label class="control-label" for="viewDate" id="viewDate"></label>
+		  	</div>
+		  </div>
+		  <div class="control-group">
+		    <label class="control-label" for="viewTask">Todo  :</label>
+		    <div class="controls">
+		    	<label class="control-label" for="viewTask" id="viewTask"></label>
+		    </div>
+		  </div>
+		  <div class="control-group">
+		    <label class="control-label" for="viewPriority">Priority  :</label>
+		    <div class="controls">
+		    	<label class="control-label" for="viewPriority" id="viewPriority"></label>
+		    </div>
+		  </div>
+		  <div class="control-group">
+		    <label class="control-label" for="viewCategory">Category  :</label>
+		    <div class="controls">
+		    	<label class="control-label" for="viewCategory" id="viewCategory"></label>
+	    	</div>
+		  </div>
+		  <div class="control-group">
+		    <label class="control-label" for="viewProject">Project  :</label>
+		    <div class="controls">
+		    	<label class="control-label" for="viewProject" id="viewProject"></label>
+		    </div>
+		  </div>
+		  <div class="control-group">
+		  	<label class="control-label" for="viewStatus">Status  :</label>
+		   	<div class="controls">
+		   		<label class="control-label" for="viewStatus" id="viewStatus"></label>
+            </div>
+		  </div>
+		  <div class="control-group">
+			 <div class="controls">
+				<a class="btn btn-success"  id="submit" data-dismiss="modal">Close</a> 
+			 </div>
+		  </div>
+		</form>
+	</div>
+</div>

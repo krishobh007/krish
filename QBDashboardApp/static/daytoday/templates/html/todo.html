@@ -1,0 +1,70 @@
+<span class="row-fluid">
+		<span class="span4"></span>
+		<span class="span4" id="todoInfoBlock">
+			<div class="center alert alert-success"></div>
+			<div class="center alert alert-error"></div>
+			<div class="center alert alert-info"></div>
+		</span>	
+		<span class="span4"></span>
+</span>
+
+<div class="row-fluid" >
+	<span class="span2"></span>
+	<span class="span8">
+		<span class="span12 center hide">
+			<span class="red">My </span><span>ToDos</span>
+		</span>
+		<span class="span12 todo-box">
+				<div class="todo-box-inner" id="createTodo">
+					<span class="span9">
+						<input class="span12" id="todoInput" type="text" placeholder="I want to .." />
+					</span>
+					<span class="span3 todo-btn" id="addTodoButton"></span>
+					<br	clear="all" />
+				</div>
+		</span>
+		<span class="span12 center options-btn" id="btnAdvacedOptions"></span> 
+	</span>
+	<span class="span2"></span>
+</div>
+
+<div id="advOptions" class="row-fluid offset0">
+		<div class="span3"></div>
+		<div class="span6 well">
+		
+		<div class="row-fluid">
+			<span class="span11 center headline"><label>Advanced options</label></span>
+			<span class="span1">
+			<button type="button" id="advOptionsClose" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			</span>
+   		</div>
+   		
+   		<div class="row span12">
+	  		<div id="datetimepicker" class="span5 input-append">
+		    	<input data-format="yyyy-MM-dd HH:mm:ss PP" type="text" id="inputDate"></input>
+		    	<span class="add-on">
+		      		<i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+		    	</span>
+	  		</div>
+		 	<div class="span5 offset1">
+		     	<input id="inputProject" type="text" class="" placeholder="Enter project..." autocomplete="off" />
+			</div>
+		</div>
+		<div class="row span12">
+			<div class="span6">
+		     <input id="inputCategory" type="text" class="" placeholder="Enter category..." autocomplete="on" />
+			</div>
+			<div class="span4 btn-group">
+			    <div class="controls">
+					  <select id="TodoPriorityList">
+					  <option value="0">Select priority</option>
+					  <option value="0">Low</option>
+					  <option value="1">Medium</option>
+					  <option value="2">High</option>
+					  </select>
+				</div>
+			</div>
+		</div>
+		</div>
+		<div class="span3"></div>
+</div>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html class="ui-mobile-rendering">
+<head>
+	
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>QBurst Day to Day Dashboard</title>
+    
+   
+
+	<link rel="stylesheet" href="{{ STATIC_URL }}/daytoday/bbtbs/libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}/daytoday/bbtbs/libs/bootstrap/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}/daytoday/bbtbs/libs/bootstrap/css/bootstrap-datetimepicker.min.css">
+   	<link rel="stylesheet" href="{{ STATIC_URL }}/daytoday/templates/css/style.css" />
+	<link href="{{ STATIC_URL }}/daytoday/templates/css/fontface.css" rel="stylesheet">
+	
+	<script src="{{ STATIC_URL }}/daytoday/bbtbs/libs/jquery.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/bbtbs/libs/underscore.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/bbtbs/libs/backbone.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/bbtbs/libs/bootstrap/bootstrap.min.js"></script>
+	<script src="{{ STATIC_URL }}/daytoday/bbtbs/libs/bootstrap/bootstrap-datetimepicker.min.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/bbtbs/libs/bootstrap/bootstrap-typeahead.js"></script>
+    
+    <script src="{{ STATIC_URL }}/daytoday/bbtbs/Main.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/bbtbs/TemplateLoader.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/bbtbs/BaseView.js"></script>
+    
+    <script src="{{ STATIC_URL }}/daytoday/utils/ProcessDateTime.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/utils/Constants.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/utils/HideAndShowButtons.js"></script> 
+    <script src="{{ STATIC_URL }}/daytoday/utils/SessionExpired.js"></script>  
+    <script src="{{ STATIC_URL }}/daytoday/utils/TemplateManager.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/utils/KeyboardNavigation.js"></script>
+	
+
+    <script src="{{ STATIC_URL }}/daytoday/controller/AppRouter.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/controller/DashBoardView.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/controller/HeaderView.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/controller/TaskView.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/controller/HelpView.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/controller/DayPanelView.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/controller/TodoView.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/controller/MeetingsView.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/controller/QuickLinksView.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/controller/MyProjectsView.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/controller/NotificationsView.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/controller/TodoSummaryViewDelete.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/controller/TodoSummaryViewUpdateDate.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/controller/TodoSummaryViewCompleted.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/controller/TodoSummaryViewUpdateTodo.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/controller/TodoSummaryViewRender.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/controller/TodoSummaryView.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/controller/ScribblingPadView.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/controller/MyTodoView.js"></script>
+	<script src="{{ STATIC_URL }}/daytoday/controller/SearchView.js"></script>
+   	<script src="{{ STATIC_URL }}/daytoday/controller/ScribblingPadSummaryView.js"></script>
+   	<script src="{{ STATIC_URL }}/daytoday/controller/SettingsView.js"></script>
+   	<script src="{{ STATIC_URL }}/daytoday/controller/FooterView.js"></script>
+   
+   
+    <script src="{{ STATIC_URL }}/daytoday/model/HeaderModel.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/model/TaskModel.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/model/MeetingsModel.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/model/MyProjectsModel.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/model/NotificationsModel.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/model/TodoSummaryModel.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/model/DayPanelModel.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/model/TodoOverviewModel.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/model/TodoModel.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/model/ScribblingPadModel.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/model/CategoryModel.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/model/ScribblingPadSummaryModel.js"></script>
+    
+    <script src="{{ STATIC_URL }}/daytoday/WebService/WebService.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/WebService/HeaderAPI.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/WebService/TaskAPI.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/WebService/MeetingsAPI.js"></script>
+   	<script src="{{ STATIC_URL }}/daytoday/WebService/MyProjectsAPI.js"></script>
+   	<script src="{{ STATIC_URL }}/daytoday/WebService/NotificationsAPI.js"></script>
+   	<script src="{{ STATIC_URL }}/daytoday/WebService/TodoSummaryAPI.js"></script> 
+  	<script src="{{ STATIC_URL }}/daytoday/WebService/DayPanelAPI.js"></script>
+  	<script src="{{ STATIC_URL }}/daytoday/WebService/TodoAPI.js"></script>
+  	<script src="{{ STATIC_URL }}/daytoday/WebService/UpdateTodoAPI.js"></script>
+  	<script src="{{ STATIC_URL }}/daytoday/WebService/ScribblingPadAPI.js"></script>
+  	<script src="{{ STATIC_URL }}/daytoday/WebService/DeleteTodoAPI.js"></script>
+  	<script src="{{ STATIC_URL }}/daytoday/WebService/UpdateDateTodoAPI.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/WebService/TaskCompletedAPI.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/WebService/SearchAPI.js"></script>
+    <script src="{{ STATIC_URL }}/daytoday/WebService/ScribblingPadSummaryAPI.js"></script>  
+    <script src="{{ STATIC_URL }}/daytoday/WebService/DeleteNoteAPI.js"></script>  
+    
+</head>
+<body >
+
+<div id="activityIndicator" class="modal hide fade in">
+	<div class="align-center modal-body  alert-info">
+		<span>Loading the page.. please wait ..   </span>
+	</div>
+</div>
+
+
+<div id="activityIndicatorTodoError" class="modal hide fade in">
+	<div class="align-center modal-body alert-error">
+		<span>Error on adding Todo !!   </span>
+	</div>
+</div>
+<div id="activityIndicatorNoteError" class="modal hide fade in">
+	<div class="align-center modal-body alert-error">
+		<span>Error on adding Note !!   </span>
+	</div>
+</div>
+
+
+<div id="popupView"></div>
+<div id="popupViewOperation"></div>
+
+<header id="header"></header>
+
+<div id="body" class="main-container"></div>
+
+<footer id="footer"></footer>
+
+</body>
+</html>

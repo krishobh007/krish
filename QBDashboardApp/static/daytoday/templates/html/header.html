@@ -1,0 +1,68 @@
+
+<span class="row-fluid">
+
+<span class="container-fluid">
+
+	<span class="span2 logo"></span>
+		
+	<span class="span6">
+			<div class="span2" id="myDashboard">
+				<span class="span12 dashboard-icon-selected"></span>
+				<span class="span12 center">Dashboard</span>
+			</div>
+			<div class="span2" id="myTodos">
+				<span class="span12 todo-icon"></span>
+				<span class="span12 center">My Todos</span>
+			</div>
+			<div class="span2" id="myScribblingPad">
+				<span class="span12 pad-icon"></span>
+				<span class="span12 center">Scribbling Pad</span>
+			</div>
+			<div class="span2" id="myDocuments">
+				<span class="span12 doc-icon"></span>
+				<span class="span12 center"> <a href="https://drive.google.com"	target="_blank">Documents</a></span>
+			</div>
+			<div class="span2" id="myCalendar">
+				<span class="span12 calendar-icon"></span>
+				<span class="span12 center"><a href="https://calendar.google.com" target="_blank">Calendar</a></span>
+			</div>
+			<div class="span2" id="settings">
+				<span class="span12 settings-icon"></span>
+				<span class="span12 center">Settings</span>
+			</div>
+	</span>
+	
+	<span class="span2">
+		<span class="span12" id="currentDate"></span>
+		<span class="span12">
+			<form class="form-search center">
+				<div class="input-append">
+					<input type="search" id="inputSearch" placeholder="search" class="search-query input-small">
+					<button type="submit" class="btn" id="btnSearch"><i class="icon-search"></i></button>
+				</div>
+			</form>
+		</span>
+		<span class="span12 center" id="empMail"></span>
+	</span>
+	
+	<span class="span2">
+		<span class="span6">
+				<div class="span12 right" id="empName"></div>
+				<div class="span12 right" id="empDesignation"></div>
+				<div class="right">
+					<div class="btn-group">
+						<a class="dropdown-toggle" data-toggle="dropdown"><span class="caret large"></span></a>
+						<ul class="dropdown-menu">
+							<li><a target="_blank" href="http://space.qburst.com/">view	profile</a></li>
+							<li id="logout"><a href="/day2day/logout">logout</a></li>
+						</ul>
+					</div>
+				</div>
+		</span>
+		<span class="span6">
+				<img src="{{user.social_profile.image_url|default:"http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm"}}" align="center" title="view profile" class="img-circle" width="70px" />
+		</span>
+	</span>
+	
+</span>
+</span>

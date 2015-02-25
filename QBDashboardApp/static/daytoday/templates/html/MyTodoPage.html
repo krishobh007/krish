@@ -1,0 +1,191 @@
+<div class="mytodo-page">
+
+<div class="container-fluid todo-block" id="todoApp"></div>
+
+<!-- Todo Summary -->
+<div class="container-fluid todosummary-block">
+	<div class="row-fluid">
+		<span class="span1"></span>
+		
+		<span class="span10" id="todoSummary"></span>				
+								
+		
+		
+				<div class="accordion-group">
+			
+					<div class="accordion" id="accordion2">
+					    <div class="accordion-heading">
+					      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsePending">
+					        <span class="red"><h4>Pending Todos (<span id="todoPendingCount"></span>)</h4></span>
+					      </a>
+					    </div>
+					    <div id="collapsePending" class="accordion-body collapse">
+					      <div class="accordion-inner">
+					        <ul id="todoPending"></ul>
+					      </div>
+					    </div>
+					</div>
+					
+					
+					<div class="accordion" id="accordion2">
+					    <div class="accordion-heading">
+					      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseToday">
+							<h4>Today (<span id="todoTodayCount"></span>)</h4>
+					      </a>
+					    </div>
+					    <div id="collapseToday" class="accordion-body collapse">
+					      <div class="accordion-inner">
+					        <ul id="todoToday"></ul>
+					      </div>
+					    </div>
+					</div>
+			
+					<div class="accordion" id="accordion2">
+					    <div class="accordion-heading">
+					      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTomorrow">
+					        <h4>Tomorrow (<span id="todoTomorrowCount"></span>)</h4>
+						  </a>
+					    </div>
+					    <div id="collapseTomorrow" class="accordion-body collapse">
+					      <div class="accordion-inner">
+					        <ul id="todoTomorrow"></ul>
+					      </div>
+					    </div>
+					</div>
+			
+					<div class="accordion" id="accordion2">
+					    <div class="accordion-heading">
+					      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseWeek">
+					        <h4 id="weekHeading"> (<span id="todoWeekCount"></span>)</h4>
+					      </a>
+					    </div>
+					    <div id="collapseWeek" class="accordion-body collapse ">
+					      <div class="accordion-inner">
+					        <ul id="todoThisWeek"></ul>
+					      </div>
+					    </div>
+					</div>
+			
+				</div>
+					
+		<span class="span1"></span>
+	</div>
+</div>
+<!-- Todo Summary Ends-->
+
+    
+<!-- edit  -->
+<div id="editDetails" class="modal hide fade in" style="display: none;">
+	<div class="modal-header"><a class="close" data-dismiss="modal">×</a>
+		<h3>Edit Todo Details</h3>
+	</div>
+	<div class="modal-body">
+		<form class="form-horizontal" method="post" action="">
+		  <div class="control-group">
+		    <label class="control-label" for="editDate">Scheduled Date</label>
+		    <div class="controls">
+		     <div id="datetimepickermodal" class="input-append">
+			    <input data-format="yyyy-MM-dd HH:mm:ss PP" type="text" id="updateDate"></input>
+			    <span class="add-on">
+			      <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+			    </span>
+			  </div>
+		  	</div>
+		  	</div>
+			  <div class="control-group">
+			    <label class="control-label" for="editTask">Todo</label>
+			    <div class="controls">
+			    	<textarea id="editTask" rows="3" cols="10" class="input-xlarge" type="text"></textarea>
+			    </div>
+			  </div>
+			  <div class="control-group">
+			    <label class="control-label" for="editPriority">Priority</label>
+			    <div class="controls">
+					  <select id="editPriority">
+						  <option value="0">Low</option>
+						  <option value="1">Medium</option>
+						  <option value="2">High</option>
+					  </select>
+				</div>
+			  </div>
+			  <div class="control-group">
+			    <label class="control-label" for="editCategory">Category</label>
+			    <div class="controls">
+			     <input id="editCategory" type="text" class="" placeholder="Enter category..." autocomplete="off" />
+			    </div>
+			  </div>
+			  <div class="control-group">
+			    <label class="control-label" for="editProject">Project</label>
+			    <div class="controls">
+			     <input id="editProject" type="text" class="" placeholder="Enter project..." autocomplete="off" />
+			    </div>
+			  </div>
+			  <div class="control-group">
+			   <div class="controls">
+			    <label for="editStatus">
+			     <input type="checkbox" id="editStatus"  >&nbsp;Completed
+               	</label>
+              </div>
+			  </div>
+			  <div class="control-group">
+			    <div class="controls">
+			      	<a class="btn btn-success"  id="submit">Submit</a> 
+					<a href="#" class="btn" data-dismiss="modal">Clear</a>
+			    </div>
+			  </div>
+		</form>
+	</div>
+</div>
+
+<!-- view  -->
+<div id="viewDetails" class="modal hide fade in" style="display: none;">
+	<div class="modal-header align-center"><a class="close" data-dismiss="modal">×</a>
+		<h3>Todo Details</h3>
+	</div>
+	<div class="modal-body">
+		<form class="form-horizontal table" method="post" action="">
+		  <div class="control-group">
+		    <label class="control-label" for="viewDate">Scheduled Date  :</label>
+		    <div class="controls">
+		    <label class="control-label" for="viewDate" id="viewDate"></label>
+		  	</div>
+		  </div>
+		  <div class="control-group">
+		    <label class="control-label" for="viewTask">Todo  :</label>
+		    <div class="controls">
+		    	<label class="control-label" for="viewTask" id="viewTask"></label>
+		    </div>
+		  </div>
+		  <div class="control-group">
+		    <label class="control-label" for="viewPriority">Priority  :</label>
+		    <div class="controls">
+		    	<label class="control-label" for="viewPriority" id="viewPriority"></label>
+		    </div>
+		  </div>
+		  <div class="control-group">
+		    <label class="control-label" for="viewCategory">Category  :</label>
+		    <div class="controls">
+		    	<label class="control-label" for="viewCategory" id="viewCategory"></label>
+	    	</div>
+		  </div>
+		  <div class="control-group">
+		    <label class="control-label" for="viewProject">Project  :</label>
+		    <div class="controls">
+		    	<label class="control-label" for="viewProject" id="viewProject"></label>
+		    </div>
+		  </div>
+		  <div class="control-group">
+		  	<label class="control-label" for="viewStatus">Status  :</label>
+		   	<div class="controls">
+		   		<label class="control-label" for="viewStatus" id="viewStatus"></label>
+            </div>
+		  </div>
+		  <div class="control-group">
+			 <div class="controls">
+				<a class="btn btn-success"  id="submit" data-dismiss="modal">Close</a> 
+			 </div>
+		  </div>
+		</form>
+	</div>
+</div>
+</div>
